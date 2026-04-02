@@ -2,36 +2,97 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Articles</title>
 </head>
 
 <body>
-  <img src="logo.png" alt="" width="60%"/>
-  <br />
-  <div class="content" style="text-align: center;">
-    <h3>Home</h3>
-    <span>Editor : Yaver Javid </span>
-  </div>
-  <div class="content">
-    abhi caravan yu hi chalta rahega <br>
-    par tere khayalat ka hum ko bhi pata hai
-  </div>
-  
-  
-  <style>
-    body{
-      padding: 0;
-      margin: 0;
-      background: #9b4922;
-      color:  #efe7dd;
-    }
-    .content{
-      padding: 16px;
-    }
-  </style>
-  
-</body>
 
+<div class="container">
+
+	<img src="logo.png" alt="logo" class="logo" width="60%" />
+
+	<div class="content">
+
+		<div class="card" data-link="/articles/yj-fragmentation.html" onclick="go(this)">
+			<span class="title">Case For Self Determination</span><br>
+			<span class="author">Author : Yaver Javid</span><br>
+			<span class="date">Date Published : 2025</span>
+		</div>
+	</div>
+
+</div>
+
+<style>
+body {
+	margin: 0;
+	background: #9b4922;
+	color: #efe7dd;
+	font-family: Arial, sans-serif;
+}
+
+/* Centered classic container */
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 16px;
+	text-align: center;
+}
+
+/* Logo */
+
+/* Grid */
+.content {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+}
+
+/* Responsive like a sane person */
+@media (max-width: 900px) {
+	.content {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 500px) {
+	.content {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Card */
+.card {
+	border: 1px solid #efe7dd;
+	padding: 20px;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.card:hover {
+	border-radius: 16px;
+	transition: 100ms;
+}
+
+/* Text */
+.title {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.author, .date {
+	font-size: 14px;
+	color: #f3d9c5;
+}
+</style>
+
+<script>
+function go(el) {
+	const link = el.dataset.link || "/articles/not-found.html";
+	window.location.href = link;
+}
+</script>
+
+</body>
 </html>
